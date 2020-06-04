@@ -3,6 +3,7 @@ import TextInputGroup from '../layout/TextInputGroup'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { addContact } from '../../actions/contactActions'
+import { v4 as uuidv4 } from 'uuid'
 
 class AddContact extends Component {
 
@@ -21,6 +22,7 @@ class AddContact extends Component {
 		const { name, email, phone } = this.state;
 
 		const newContact = {
+			id: uuidv4(),
 			name,
 			email,
 			phone
